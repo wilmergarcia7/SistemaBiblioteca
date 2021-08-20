@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDBIbliotecaModelStoreContainer" CdmEntityContainer="BDBibliotecaEntities">
+    <EntitySetMapping Name="Administradores">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Administradores">
+        <MappingFragment StoreEntitySet="Administradores">
+          <ScalarProperty Name="idAdmin" ColumnName="idAdmin" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Autores">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Autores">
+        <MappingFragment StoreEntitySet="Autores">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idAutor" ColumnName="idAutor" />
+          <ScalarProperty Name="nombreCompletoAutor" ColumnName="nombreCompletoAutor" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Categorias">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="estadi" ColumnName="estadi" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalleprestamo">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Detalleprestamo">
+        <MappingFragment StoreEntitySet="Detalleprestamo">
+          <ScalarProperty Name="idDetallePrestamo" ColumnName="idDetallePrestamo" />
+          <ScalarProperty Name="idPrestamo" ColumnName="idPrestamo" />
+          <ScalarProperty Name="idLibro" ColumnName="idLibro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devoluciones">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Devoluciones">
+        <MappingFragment StoreEntitySet="Devoluciones">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="pagoTotal" ColumnName="pagoTotal" />
+          <ScalarProperty Name="diasRetraso" ColumnName="diasRetraso" />
+          <ScalarProperty Name="idDevolucion" ColumnName="idDevolucion" />
+          <ScalarProperty Name="idDetallePrestamo" ColumnName="idDetallePrestamo" />
+          <ScalarProperty Name="fechaDevolucion" ColumnName="fechaDevolucion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Editoriales">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Editoriales">
+        <MappingFragment StoreEntitySet="Editoriales">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idEditoriales" ColumnName="idEditoriales" />
+          <ScalarProperty Name="editoriales1" ColumnName="editoriales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Generos">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Generos">
+        <MappingFragment StoreEntitySet="Generos">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Idiomas">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Idiomas">
+        <MappingFragment StoreEntitySet="Idiomas">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idIdioma" ColumnName="idIdioma" />
+          <ScalarProperty Name="Idioma" ColumnName="Idioma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lectores">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Lectores">
+        <MappingFragment StoreEntitySet="Lectores">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="idLector" ColumnName="idLector" />
+          <ScalarProperty Name="nombreLector" ColumnName="nombreLector" />
+          <ScalarProperty Name="apellidoLector" ColumnName="apellidoLector" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libros">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Libros">
+        <MappingFragment StoreEntitySet="Libros">
+          <ScalarProperty Name="idLibro" ColumnName="idLibro" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="fechaLanzamiento" ColumnName="fechaLanzamiento" />
+          <ScalarProperty Name="idAutor" ColumnName="idAutor" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="idEditorial" ColumnName="idEditorial" />
+          <ScalarProperty Name="idIdioma" ColumnName="idIdioma" />
+          <ScalarProperty Name="numeroPaginas" ColumnName="numeroPaginas" />
+          <ScalarProperty Name="descripcionLibro" ColumnName="descripcionLibro" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paises">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Paises">
+        <MappingFragment StoreEntitySet="Paises">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prestamos">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Prestamos">
+        <MappingFragment StoreEntitySet="Prestamos">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="idPrestamo" ColumnName="idPrestamo" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idLector" ColumnName="idLector" />
+          <ScalarProperty Name="fechaPrestamo" ColumnName="fechaPrestamo" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="primerNombre" ColumnName="primerNombre" />
+          <ScalarProperty Name="segundoNombre" ColumnName="segundoNombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="BDBIbliotecaModel.Facturas">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="totalPagado" ColumnName="totalPagado" />
+          <ScalarProperty Name="diasRetraso" ColumnName="diasRetraso" />
+          <ScalarProperty Name="fechaDevolucion" ColumnName="fechaDevolucion" />
+          <ScalarProperty Name="lector" ColumnName="lector" />
+          <ScalarProperty Name="fechaPrestamo" ColumnName="fechaPrestamo" />
+          <ScalarProperty Name="libro" ColumnName="libro" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDBIbliotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administradores">
+    <Key>
+      <PropertyRef Name="idAdmin" />
+    </Key>
+    <Property Name="idAdmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Autores">
+    <Key>
+      <PropertyRef Name="idAutor" />
+    </Key>
+    <Property Name="idAutor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreCompletoAutor" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="idPais" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="idCategoria" />
+    </Key>
+    <Property Name="idCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoria" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="detalleDevoluciones">
+    <Key>
+      <PropertyRef Name="idDetalleDevoluciones" />
+    </Key>
+    <Property Name="idDetalleDevoluciones" Type="int" Nullable="false" />
+    <Property Name="idDevolucion" Type="int" Nullable="false" />
+    <Property Name="diasRetraso" Type="int" Nullable="false" />
+    <Property Name="pagoTotal" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detalleprestamo">
+    <Key>
+      <PropertyRef Name="idDetallePrestamo" />
+    </Key>
+    <Property Name="idDetallePrestamo" Type="int" Nullable="false" />
+    <Property Name="idPrestamo" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="pago" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Devoluciones">
+    <Key>
+      <PropertyRef Name="idDevolucion" />
+    </Key>
+    <Property Name="idDevolucion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idDetallePrestamo" Type="int" Nullable="false" />
+    <Property Name="fechaDevolucion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Editoriales">
+    <Key>
+      <PropertyRef Name="idEditoriales" />
+    </Key>
+    <Property Name="idEditoriales" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="editoriales" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Generos">
+    <Key>
+      <PropertyRef Name="idGenero" />
+    </Key>
+    <Property Name="idGenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="genero" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Idiomas">
+    <Key>
+      <PropertyRef Name="idIdioma" />
+    </Key>
+    <Property Name="idIdioma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idioma" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lectores">
+    <Key>
+      <PropertyRef Name="idLector" />
+    </Key>
+    <Property Name="idLector" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreLector" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="apellidoLector" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="telefono" Type="int" Nullable="false" />
+    <Property Name="observaciones" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Libros">
+    <Key>
+      <PropertyRef Name="idLibro" />
+    </Key>
+    <Property Name="idLibro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="fechaLanzamiento" Type="date" Nullable="false" />
+    <Property Name="idAutor" Type="int" Nullable="false" />
+    <Property Name="idCategoria" Type="int" Nullable="false" />
+    <Property Name="idEditorial" Type="int" Nullable="false" />
+    <Property Name="idIdioma" Type="int" Nullable="false" />
+    <Property Name="numeroPaginas" Type="int" Nullable="false" />
+    <Property Name="descripcionLibro" Type="nvarchar" MaxLength="255" />
+    <Property Name="ISBN" Type="nvarchar" MaxLength="13" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="idPais" />
+    </Key>
+    <Property Name="idPais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pais" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prestamos">
+    <Key>
+      <PropertyRef Name="idPrestamo" />
+    </Key>
+    <Property Name="idPrestamo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="idLector" Type="int" Nullable="false" />
+    <Property Name="idLibro" Type="int" Nullable="false" />
+    <Property Name="fechaPrestamo" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="primerNombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="segundoNombre" Type="nvarchar" MaxLength="100" />
+    <Property Name="primerApellido" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="segundoApellido" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="idGenero" Type="int" Nullable="false" />
+    <Property Name="correoElectronico" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="telefono" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="usuario" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="pass" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Admin" Type="int" Nullable="false" />
+    <Property Name="edad" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Autores_Paises">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="Autores" Type="Self.Autores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="Autores">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_detalleDevoluciones_Devoluciones">
+    <End Role="Devoluciones" Type="Self.Devoluciones" Multiplicity="1" />
+    <End Role="detalleDevoluciones" Type="Self.detalleDevoluciones" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Devoluciones">
+        <PropertyRef Name="idDevolucion" />
+      </Principal>
+      <Dependent Role="detalleDevoluciones">
+        <PropertyRef Name="idDetalleDevoluciones" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalleprestamo_Prestamos">
+    <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="1" />
+    <End Role="Detalleprestamo" Type="Self.Detalleprestamo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prestamos">
+        <PropertyRef Name="idPrestamo" />
+      </Principal>
+      <Dependent Role="Detalleprestamo">
+        <PropertyRef Name="idPrestamo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Devoluciones_Detalleprestamo">
+    <End Role="Detalleprestamo" Type="Self.Detalleprestamo" Multiplicity="1" />
+    <End Role="Devoluciones" Type="Self.Devoluciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Detalleprestamo">
+        <PropertyRef Name="idDetallePrestamo" />
+      </Principal>
+      <Dependent Role="Devoluciones">
+        <PropertyRef Name="idDetallePrestamo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Libros_Autores">
+    <End Role="Autores" Type="Self.Autores" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Libros" Type="Self.Libros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Autores">
+        <PropertyRef Name="idAutor" />
+      </Principal>
+      <Dependent Role="Libros">
+        <PropertyRef Name="idAutor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Libros_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+    <End Role="Libros" Type="Self.Libros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="Libros">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Libros_Editoriales">
+    <End Role="Editoriales" Type="Self.Editoriales" Multiplicity="1" />
+    <End Role="Libros" Type="Self.Libros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Editoriales">
+        <PropertyRef Name="idEditoriales" />
+      </Principal>
+      <Dependent Role="Libros">
+        <PropertyRef Name="idEditorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Libros_Idiomas">
+    <End Role="Idiomas" Type="Self.Idiomas" Multiplicity="1" />
+    <End Role="Libros" Type="Self.Libros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Idiomas">
+        <PropertyRef Name="idIdioma" />
+      </Principal>
+      <Dependent Role="Libros">
+        <PropertyRef Name="idIdioma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prestamos_Lectores">
+    <End Role="Lectores" Type="Self.Lectores" Multiplicity="1" />
+    <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lectores">
+        <PropertyRef Name="idLector" />
+      </Principal>
+      <Dependent Role="Prestamos">
+        <PropertyRef Name="idLector" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prestamos_Libros">
+    <End Role="Libros" Type="Self.Libros" Multiplicity="1" />
+    <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libros">
+        <PropertyRef Name="idLibro" />
+      </Principal>
+      <Dependent Role="Prestamos">
+        <PropertyRef Name="idLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prestamos_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Prestamos">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Administradores">
+    <End Role="Administradores" Type="Self.Administradores" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administradores">
+        <PropertyRef Name="idAdmin" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Admin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Generos">
+    <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Generos">
+        <PropertyRef Name="idGenero" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="idGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDBIbliotecaModelStoreContainer">
+    <EntitySet Name="Administradores" EntityType="Self.Administradores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Autores" EntityType="Self.Autores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="detalleDevoluciones" EntityType="Self.detalleDevoluciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detalleprestamo" EntityType="Self.Detalleprestamo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Devoluciones" EntityType="Self.Devoluciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Editoriales" EntityType="Self.Editoriales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Generos" EntityType="Self.Generos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Idiomas" EntityType="Self.Idiomas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lectores" EntityType="Self.Lectores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prestamos" EntityType="Self.Prestamos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Autores_Paises" Association="Self.FK_Autores_Paises">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Autores" EntitySet="Autores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_detalleDevoluciones_Devoluciones" Association="Self.FK_detalleDevoluciones_Devoluciones">
+      <End Role="Devoluciones" EntitySet="Devoluciones" />
+      <End Role="detalleDevoluciones" EntitySet="detalleDevoluciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalleprestamo_Prestamos" Association="Self.FK_Detalleprestamo_Prestamos">
+      <End Role="Prestamos" EntitySet="Prestamos" />
+      <End Role="Detalleprestamo" EntitySet="Detalleprestamo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Devoluciones_Detalleprestamo" Association="Self.FK_Devoluciones_Detalleprestamo">
+      <End Role="Detalleprestamo" EntitySet="Detalleprestamo" />
+      <End Role="Devoluciones" EntitySet="Devoluciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Libros_Autores" Association="Self.FK_Libros_Autores">
+      <End Role="Autores" EntitySet="Autores" />
+      <End Role="Libros" EntitySet="Libros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Libros_Categorias" Association="Self.FK_Libros_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Libros" EntitySet="Libros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Libros_Editoriales" Association="Self.FK_Libros_Editoriales">
+      <End Role="Editoriales" EntitySet="Editoriales" />
+      <End Role="Libros" EntitySet="Libros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Libros_Idiomas" Association="Self.FK_Libros_Idiomas">
+      <End Role="Idiomas" EntitySet="Idiomas" />
+      <End Role="Libros" EntitySet="Libros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prestamos_Lectores" Association="Self.FK_Prestamos_Lectores">
+      <End Role="Lectores" EntitySet="Lectores" />
+      <End Role="Prestamos" EntitySet="Prestamos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prestamos_Libros" Association="Self.FK_Prestamos_Libros">
+      <End Role="Libros" EntitySet="Libros" />
+      <End Role="Prestamos" EntitySet="Prestamos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prestamos_Usuarios" Association="Self.FK_Prestamos_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Prestamos" EntitySet="Prestamos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Administradores" Association="Self.FK_Usuarios_Administradores">
+      <End Role="Administradores" EntitySet="Administradores" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Generos" Association="Self.FK_Usuarios_Generos">
+      <End Role="Generos" EntitySet="Generos" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

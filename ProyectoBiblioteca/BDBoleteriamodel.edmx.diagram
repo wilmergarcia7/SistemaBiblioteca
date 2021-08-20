@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="af76a31a3ed448e4b550e37debc995f5" Name="Diagram1">
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Administradores" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Autores" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Categorias" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Detalleprestamo" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Devoluciones" Width="1.5" PointX="9.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Editoriales" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Generos" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Idiomas" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Lectores" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Libros" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Paises" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Prestamos" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBIbliotecaModel.Usuarios" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Usuarios_Administradores" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Autores_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Libros_Autores" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Libros_Categorias" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Detalleprestamo_Libros" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Detalleprestamo_Prestamos" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Devoluciones_Detalleprestamo" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Libros_Editoriales" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Usuarios_Generos" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Libros_Idiomas" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Prestamos_Lectores" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBIbliotecaModel.FK_Prestamos_Usuarios" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
